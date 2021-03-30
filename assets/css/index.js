@@ -13,8 +13,42 @@ const css = StyleSheet.create({
       flex: 1,
       backgroundColor: primary,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     },
+
+    container2: {
+      height: 120,
+      justifyContent: 'space-around'
+    },
+
+    logo: {
+      width: 450,
+      height: 450
+    },
+
+    btnPrimary: {
+      height: 50,
+      width: 300,
+      backgroundColor: secondary,
+      borderRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+
+    btnSecondary: {
+      height: 50,
+      width: 300,
+      borderWidth: 1,
+      borderColor: white,
+      borderRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+
+    txtBtn: {
+      color: white,
+      fontSize: 20
+    }
 });
 
 export { css }

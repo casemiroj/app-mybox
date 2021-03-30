@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native';
+import { css } from '../assets/css'
 
-export default function Home() {
+export default function Login() {
     return (
-        <View>
-            <Text>Hello!</Text>
+        <View style={css.container}>
+            <Image source={require('../assets/img/logo-horizontal.png')}  style={css.logo}/>
         </View>
     )
 }
