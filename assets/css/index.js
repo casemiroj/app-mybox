@@ -17,7 +17,7 @@ const css = StyleSheet.create({
     },
 
     container2: {
-      height: 120,
+      height: 100,
       justifyContent: 'space-around'
     },
 
@@ -26,8 +26,13 @@ const css = StyleSheet.create({
       height: 450
     },
 
+    logo2: {
+      width: 350,
+      height: 170
+    },
+
     btnPrimary: {
-      height: 50,
+      height: 40,
       width: 300,
       backgroundColor: secondary,
       borderRadius: 12,
@@ -36,7 +41,7 @@ const css = StyleSheet.create({
     },
 
     btnSecondary: {
-      height: 50,
+      height: 40,
       width: 300,
       borderWidth: 1,
       borderColor: white,
@@ -48,7 +53,38 @@ const css = StyleSheet.create({
     txtBtn: {
       color: white,
       fontSize: 20
-    }
+    },
+
+    inputLogin: {
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: white,
+      height: 50,
+      width: 350,
+      color: white,
+      padding: 15,
+      marginBottom: 20
+    },
+
+    btnLogin: {
+      height: 50,
+      width: 180,
+      backgroundColor: secondary,
+      borderRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+
+    formLogin: {
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+
+    loginErro:(text='none') => ({
+      marginBottom: 30,
+      color: '#f00',
+      display: text
+    })
 });
 
 export { css }
