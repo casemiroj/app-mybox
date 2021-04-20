@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
             
             <View style={css.container2}>
                 <TouchableOpacity style={css.btnSecondary} onPress={() => navigation.navigate('Login')}>
-                    <Text style={css.txtBtn}>Login</Text>
+                    <Text style={css.txtBtn}>Login (Somente ADMs)</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={css.btnPrimary} onPress={() => navigation.navigate('Rastreio')}>
                     <Text style={css.txtBtn}>Rastreio</Text>
