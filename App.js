@@ -1,5 +1,6 @@
 import React from 'react';
-import {Home, Login, Rastreio, Restrito} from './views'
+import {Home, Login, Rastreio} from './views'
+import Restrito from './views/areaRestrita/Restrito'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 

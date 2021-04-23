@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TextInput, KeyboardAvoidingView, TouchableOpacity, Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { css } from '../assets/css'
 
-export default function Login() {
+export default function Login({navigation}) {
 
     const [display, setDisplay]=useState('none');
     const [user, setUser]=useState(null);
@@ -24,11 +25,16 @@ export default function Login() {
         })
 
         let json = await response.json()
+        
         if(json === 'error') {
             setDisplay('flex')
             setTimeout(() => {
                 setDisplay('none')
             }, 5000)
+            await AsyncStorage.clear()
+        } else {
+            let userData = await AsyncStorage.setItem('userData', JSON.stringify(json))
+            navigation.navigate('Restrito')
         }
     }
 
