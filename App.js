@@ -13,7 +13,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
         <Stack.Screen name="Login" component={Login} options={{headerTintColor: '#FFFBFF' ,headerStyle:{shadowColor: 'transparent', backgroundColor: '#1E1345'}}}/>
         <Stack.Screen name="Rastreio" component={Rastreio} options={{headerTintColor: '#FFFBFF' ,headerStyle:{shadowColor: 'transparent', backgroundColor: '#1E1345'}}} />
-        <Stack.Screen name="Restrito" component={Restrito} options={{headerTintColor: '#FFFBFF' ,headerStyle:{shadowColor: 'transparent', backgroundColor: '#1E1345'}}} />
+        <Stack.Screen name="Restrito" component={Restrito} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

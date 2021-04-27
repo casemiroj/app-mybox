@@ -27,7 +27,7 @@ export default function Restrito() {
                 
         >
              <Tab.Screen
-                    name="Profile"
+                    name="Perfil"
                     component={Profile}
                     options={{
                     tabBarIcon:()=>(

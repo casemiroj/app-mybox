@@ -91,7 +91,34 @@ const css = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
       color: '#333'
+    },
+
+    areaMenu: {
+      flexDirection: 'row',
+      paddingTop: 60,
+      paddingBottom: 20,
+      width: '100%',
+      backgroundColor: darkPrimary,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    
+    btnHome: {
+      textAlign: 'left',
+    },
+
+    areaTitle: {
+      width: '70%',
+      fontWeight: 'bold',
+      fontSize: 20,
+      color: white,
+      textAlign: 'center'
+    }, 
+
+    btnLogout: {
+      textAlign: 'right'
     }
+
 
 
 });
