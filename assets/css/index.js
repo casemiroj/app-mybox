@@ -117,6 +117,19 @@ const css = StyleSheet.create({
 
     btnLogout: {
       textAlign: 'right'
+    },
+
+    perfilContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: primary,
+      height: '100%'
+    },
+
+    perfilMsg: {
+      fontWeight: 'bold',
+      color: colorAuxliar,
+      marginBottom: 40
     }
 
 
