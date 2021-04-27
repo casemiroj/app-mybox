@@ -12,8 +12,8 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
         <Stack.Screen name="Login" component={Login} options={{headerTintColor: '#FFFBFF' ,headerStyle:{shadowColor: 'transparent', backgroundColor: '#1E1345'}}}/>
-        <Stack.Screen name="Rastreio" component={Rastreio} />
-        <Stack.Screen name="Restrito" component={Restrito} />
+        <Stack.Screen name="Rastreio" component={Rastreio} options={{headerTintColor: '#FFFBFF' ,headerStyle:{shadowColor: 'transparent', backgroundColor: '#1E1345'}}} />
+        <Stack.Screen name="Restrito" component={Restrito} options={{headerTintColor: '#FFFBFF' ,headerStyle:{shadowColor: 'transparent', backgroundColor: '#1E1345'}}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

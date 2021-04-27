@@ -84,7 +84,16 @@ const css = StyleSheet.create({
       marginBottom: 30,
       color: '#f00',
       display: text
-    })
+    }),
+
+    areaTab: {
+      backgroundColor: darkPrimary,
+      fontSize: 24,
+      fontWeight: 'bold',
+      color: '#333'
+    }
+
+
 });
 
 export { css }
