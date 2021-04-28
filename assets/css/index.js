@@ -121,7 +121,6 @@ const css = StyleSheet.create({
 
     perfilContainer: {
       alignItems: 'center',
-      justifyContent: 'center',
       backgroundColor: primary,
       height: '100%'
     },
@@ -129,7 +128,8 @@ const css = StyleSheet.create({
     perfilMsg: {
       fontWeight: 'bold',
       color: colorAuxliar,
-      marginBottom: 40
+      marginTop: 40,
+      marginBottom: 40,
     }
 
 
