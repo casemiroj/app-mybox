@@ -31,6 +31,11 @@ const css = StyleSheet.create({
       height: 170
     },
 
+    logoRastreio: {
+      width: 200,
+      height: 200
+    },
+
     btnPrimary: {
       height: 40,
       width: 300,
@@ -130,6 +135,7 @@ const css = StyleSheet.create({
       color: colorAuxliar,
       marginTop: 40,
       marginBottom: 40,
+      textAlign: 'center'
     },
 
     qrcode: (display = 'flex')=>({
