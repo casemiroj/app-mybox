@@ -130,7 +130,20 @@ const css = StyleSheet.create({
       color: colorAuxliar,
       marginTop: 40,
       marginBottom: 40,
-    }
+    },
+
+    qrcode: (display = 'flex')=>({
+      width: '100%',
+      height: '100%',
+      backgroundColor: primary,
+      justifyContent: 'center',
+      display: display
+    }),
+
+    qrForm: (display = 'none')=>({
+      width: '100%',
+      display: display
+    })
 
 
 
