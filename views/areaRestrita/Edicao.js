@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Button } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MenuRestrito from '../../assets/components/MenuRestrito'
 import { BarCodeScanner } from 'expo-barcode-scanner';
@@ -63,6 +63,17 @@ export default function Edição({navigation}) {
 
       }
 
+      //Nova leitura do QRCode
+      async function readAgain(){
+          setScanned(false)
+          setDisplayQR('flex')
+          setDisplayForm('none')
+          setCode(null)
+          setProduct(null)
+          setLocalization(null)
+      }
+
+
       //Retorna posição e endereço do usuário
       async function getLocation() {
         let location = await Location.getCurrentPositionAsync({});
@@ -98,6 +109,13 @@ export default function Edição({navigation}) {
                     <TouchableOpacity style={css.btnLogin} onPress={() => sendForm()}>
                         <Text>Atualizar</Text>
                     </TouchableOpacity>
+
+                    {scanned && 
+                        <View> 
+                            <Button title="Escanear novamente" onPress={() => readAgain()} />
+                        </View>
+
+                    }
                 </View>
             </View>
        </View>
