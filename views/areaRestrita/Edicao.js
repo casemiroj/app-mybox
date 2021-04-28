@@ -4,6 +4,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import MenuRestrito from '../../assets/components/MenuRestrito'
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { css } from '../../assets/css';
+import config from '../../config/config.json'
+import * as Location from 'expo-location';
+import Geocoder from 'react-native-geocoding';
 
 export default function Edição({navigation}) {
     const [hasPermission, setHasPermission] = useState(null);
@@ -21,17 +24,57 @@ export default function Edição({navigation}) {
         })();
       }, []);
 
+      useEffect(() => {
+        (async () => {
+          let { status } = await Location.requestPermissionsAsync();
+          if (status !== 'granted') {
+            setErrorMsg('Permission to access location was denied');
+          }
+        })();
+      });
+
       //Leitura do QRCode
       async function handleBarCodeScanned({ type, data }){
         setScanned(true);
         setDisplayQR('none')
         setDisplayForm('flex')
         setCode(data)
+        await getLocation()
+        await searchProduct(data)
       };
+      
+      async function searchProduct(codigo) {
+        let response = await fetch(config.urlRoot + 'searchProduct', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: codigo
+            })
+        });
+        let json = await response.json();
+        setProduct(json.name);
+
+    }
 
       async function sendForm() {
 
       }
+
+      //Retorna posição e endereço do usuário
+      async function getLocation() {
+        let location = await Location.getCurrentPositionAsync({});
+        Geocoder.init(config.geoCodingAPI);
+        Geocoder.from(location.coords.latitude, location.coords.longitude)
+		    .then(json => {
+        		let number = json.results[0].address_components[0].short_name;
+                let street = json.results[0].address_components[1].short_name;
+			    setLocalization(`${street} - ${number}`);
+		    })
+		    .catch(error => console.warn(error));
+    }
     
 
     return (

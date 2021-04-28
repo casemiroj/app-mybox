@@ -21,5 +21,6 @@
     "dialect": "mysql"
   },
   "urlRoot": "http://192.168.0.20:3000/",
-  "origin" : "Av. Dr. Adolpho Pinto, 109, São Paulo / SP"
+  "origin" : "Av. Dr. Adolpho Pinto, 109, São Paulo / SP",
+  "geoCodingAPI": "AIzaSyA81pRluzgynUfPHrILlr2RCeHEQnLoq-o"
 }

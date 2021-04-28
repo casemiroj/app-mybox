@@ -66,6 +66,17 @@ app.post('/create', async (req,res)=> {
     })
 })
 
+//pegar dados do produto
+app.post('/searchProduct', async (req, res) => {
+    let response = await tracking.findOne({
+        where: { code: req.body.code }
+    });
+    let response2 = await product.findOne({
+        where: { trackingId: response.id }
+    });
+    res.send(JSON.stringify(response2));
+});
+
 let port = process.env.PORT || 3000
 app.listen(port, (req, res) => {
     console.log('Servidor rodando...')
