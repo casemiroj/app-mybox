@@ -16,13 +16,14 @@ export default function Edição({navigation}) {
     const [code, setCode] = useState(null);
     const [product, setProduct] = useState(null);
     const [localization, setLocalization] = useState(null);
+    const [response, setResponse] = useState(null);
   
     useEffect(() => {
         (async () => {
           const { status } = await BarCodeScanner.requestPermissionsAsync();
           setHasPermission(status === 'granted');
         })();
-      }, []);
+    }, []);
 
       useEffect(() => {
         (async () => {
@@ -58,10 +59,24 @@ export default function Edição({navigation}) {
         setProduct(json.name);
 
     }
-
-      async function sendForm() {
-
-      }
+    
+    //Envia o formulário com os dados para Edição
+    async function sendForm() {
+        let response = await fetch(`${config.urlRoot}update`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: code,
+                product: product,
+                local: localization
+            })
+        })
+        let json = await response.json()
+        setResponse(json)
+    }
 
       //Nova leitura do QRCode
       async function readAgain(){
@@ -98,7 +113,7 @@ export default function Edição({navigation}) {
 
             <View style={css.qrForm(displayForm)}>
                 <View style={css.perfilContainer}>
-                    <Text style={css.perfilMsg}>Código do produto: {code}</Text>
+                    <Text style={css.perfilMsg}>{response}</Text>
                     
                     <TextInput style={css.inputLogin} placeholder="Nome do produto" placeholderTextColor="#FFFBFF" onChangeText={text => setProduct(text)} value={product} />
                     
